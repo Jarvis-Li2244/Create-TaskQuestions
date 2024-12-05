@@ -26,6 +26,28 @@ Programs accept input to achieve their intended functionality. **Describe at lea
 - Write your responses to this question only on the designated pages in the separate Written Response booklet.
 - If there are multiple parts to this question, write the part letter with your response.
 
+Evan.js : 
+
+~~~Javascript
+function addToDo(event) {
+  DOMSelectors.toDoList.innerHTML = "";
+  const inputtedToDo = DOMSelectors.userInput.value;
+  event.preventDefault();
+  ToDoItems.push(inputtedToDo);
+  displayToDoList(ToDoItems);
+  DOMSelectors.userInput.value = "";
+}
+
+DOMSelectors.submitButton.addEventListener("click", addToDo);
+~~~
+
+In this program, when the use presses the submit button, the program will take the user's input and push it into an array. The program will then use that array and display it on screen.
+
+Gabe.js:
+
+~~~Javascript
+
+~~~
 ---
 
 ### Question 2
