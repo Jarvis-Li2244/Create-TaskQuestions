@@ -18,7 +18,48 @@ Sequencing
 Selection 
 Iteration
 
+Gabe.js:
 
+~~~Javascript
+function final(array){
+        let a = 0
+        let b = 0
+        for (let i = 0; i < array.length; i++){
+         if (array[i].includes("Correct")) {a++}
+         if (array[i].includes("Incorrect")) {b++}}
+         clear()
+         const correct = a * 100/DOMSelectors.input.value
+         const incorrect = b * 100/DOMSelectors.input.value
+         DOMSelectors.question.insertAdjacentHTML("beforeend", `<h1>You got ${correct}% of them right and ${incorrect}% of them wrong!</h1>`)
+        }
+~~~
+
+Sequencing: displays steps in a logical order, first creating the variables, the going through the for loop, then returning values.
+Selection: the if statements show selection. In this function, the selection is based on if the specific item in the array is correct or incorrect. Based on that, it decides whether variables a or b are increased by one.
+Iteration: this for loop in the function shows iteration. In this function, the for loop iterates through an array, performing selection on each item in the array.
+
+Evan.js:
+
+~~~Javascript
+function removeToDo() {
+    const specificCard = this.parentElement;
+    const specificCardText =
+      specificCard.querySelector(".to-do-card").textContent;
+
+    for (let i = 0; i < ToDoItems.length; i++) {
+      if (ToDoItems[i] === specificCardText) {
+        ToDoItems.splice(i, 1);
+        break;
+      }
+    }
+    
+    specificCard.remove();
+  }
+~~~
+
+Sequencing: sets variables and retrievs text content before running its remove function.
+Selection: the if statement checks each item in the list and decides whether to remove it or keep it.
+Iteration: the function's for loop iterates through the ToDo list to check each item.
 
 ### Question 1
 Programs accept input to achieve their intended functionality. **Describe at least one valid input to your program and what your program does with that input.**
@@ -46,8 +87,29 @@ In this program, when the use presses the submit button, the program will take t
 Gabe.js:
 
 ~~~Javascript
-
+function game(qa) {
+     let i = 0
+     const used = []
+     
+     DOMSelectors.form.addEventListener('submit', function(event) {
+         event.preventDefault()
+         const input = DOMSelectors.input.value;
+         displayQuestion(input)
+     });
+ 
+     function displayQuestion(input) {
+         if (i < input) {
+             let q = qa[i]
+             console.log(q)
+             clear()
+             DOMSelectors.question.insertAdjacentHTML("beforeend", `<h1>${q.question}</h1>`)
+         }
+         
+     }
+}
 ~~~
+
+In this program, the function takes the user input and sets its value as a variable "input". Based on this input which would seem to be a number, it gives the user questions up to the amount the user desired based on their input.
 ---
 
 ### Question 2
